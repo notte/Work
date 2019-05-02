@@ -60,15 +60,58 @@ for(var i=1;i<=40;i++){
 let tab_switch = document.getElementsByClassName('tab_switch')
 
 
-let switchFunction = () => {
+// let switchFunction = () => {
+
     
-    for(let i=0;i<tab_switch.length;i++){
-        tab_switch[i].className = 'tab_switch'
+//     for(let i=0;i<tab_switch.length;i++){
+
+//         tab_switch[i].index=i
+
+//         for(let i=0;i<tab_switch.length;i++){
+//             tab_switch[i].classList.remove('tab_switch_active')
+//         }
+//         tab_switch[this.index].classList.add('tab_switch_active')
+
+//     }
+// }
+
+// for(let i=0;i<tab_switch.length;i++){
+//     tab_switch[i].addEventListener('click', switchFunction);
+// }
+
+
+
+let tabSwitch=document.getElementsByClassName("tab_switch")
+
+for(var i=0;i<tabSwitch.length;i++){
+
+    tabSwitch[i].index=i;
+    console.log(tabSwitch[i].index)
+
+    tabSwitch[i].onclick=function(){
+
+        // 刪除所有active的class
+        for(var i=0;i<tabSwitch.length;i++){
+            tabSwitch[i].classList.remove("tab_switch_active")
+        }
+
+        // 在當前加入active的class
+        tabSwitch[this.index].classList.add("tab_switch_active")
+        console.log(tabSwitch[this.index])
+
     }
 }
 
-for(let i=0;i<tab_switch.length;i++){
-    tab_switch[i].addEventListener('click', switchFunction);
-}
+// for(var i=0;i<tabSwitch.length;i++){
+
+//     tabSwitch[i].onclick=function(){
+
+//         console.log(tabSwitch[this.index])
+    
+//     }
+// }
+
+// Array index 陣列索引
 
 
+// https://www.itread01.com/content/1541957043.html
