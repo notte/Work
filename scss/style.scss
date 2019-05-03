@@ -78,6 +78,10 @@ body {
                 height: 85%;
                 overflow-y: scroll;
 
+                .second{
+                    display: none;
+                }
+
                 // section區塊固定樣式
                 .section {
                     padding-bottom:15px;
