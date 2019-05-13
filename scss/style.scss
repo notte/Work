@@ -1,16 +1,17 @@
-// 背景圖片
-$background_image: "../images/duo_game_description_bg.png";
-// 主要色，標題、分隔線等
-$mainColor:#854315;
+// 背景顏色
+$background_color: #613B2D;
+// 主色、標題色
+$mainColor:#f1b317;
+// 分隔線色
+$lineColor:#43281C;
 // 內文字顏色
-$textColor:#fff;
+$textColor:#D6A487;
 // 提亮色
 $hightColor:#ff0000;
 
 body {
     width: 100vw;
-    height: 100vh;
-    background: #000;
+    height: 100vh; 
     overflow: hidden;
 
     // 拿掉所有預設樣式，指定文字字型、粗細
@@ -46,30 +47,38 @@ body {
         margin-bottom: 10px;
     }
 
+
+
+    // 下底線樣式
+    .bottomLine{
+        border-bottom: 1px solid $lineColor;
+    }
+
     // 背景圖
     .wrap {
         width: 100%;
         height: 100%;
-        background: url($background_image);
+        background: $background_color;
         background-size: 100% 100%;
         background-repeat: no-repeat;
 
         // 外層容器
         .container {
             height: 100vh;
-            padding: 7%;
+            padding: 5%;
 
             // 預設Tab樣式
             .tab_switch {
                 padding: 10px 20px;
-                border-radius: 10px 10px 0 0;
                 display: inline-block;
                 margin-right: -4px;
+                margin-bottom: 15px;
             }
 
             // Tab被選取樣式
             .tab_switch_active {
                 background-color:$mainColor;
+                color:$background_color;
             }
             
             // 內層滾動容器
@@ -78,14 +87,15 @@ body {
                 height: 85%;
                 overflow-y: scroll;
 
-                .second{
-                    display: none;
+                .textBox{
+                    margin: 10px 0;
+                    padding: 10px 0;
                 }
+
 
                 // section區塊固定樣式
                 .section {
-                    padding-bottom:15px;
-                    border-bottom: 1px dashed $mainColor;
+                    // padding-bottom:15px;
 
                     // 第一區塊icon列表
                     .iconList {
@@ -180,6 +190,21 @@ body {
                     img{
                         width:15%;
                         margin: 5px;
+                    }
+                }
+
+                // 第二區塊隱藏&標題至左
+                #second{
+                    display: none;
+                    h4{
+                        text-align: left;
+                    }
+                    .textBox{
+                        li{
+                            img{
+                                width: 30%;
+                            }
+                        }
                     }
                 }
 
