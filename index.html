@@ -18,20 +18,23 @@
       <div class="container">
 
         <!-- 最上方Tab -->
-        <ul class="contentCenter bottomLine">
+        <ul class="contentCenter">
           <li class="tab_switch tab_switch_active">赔倍表</li>
           <li class="tab_switch">游戏规则</li>
         </ul>
 
         <div class="scroll_container">
 
+          <div class="scrollBox">
+
           <div id="first">
 
           <!-- 遊戲圖標 -->
 
           <div class="section bottomLine">
-              <h4>游戏图标</h4>
+              <h4 class="mainColor">游戏图标</h4>
             <div class="iconList">
+              <div class="contentCenter">
               <ul class="iconTitleType">
                 <li><img src="images/Left_iconList_Title.png" alt="" /></li>
                 <li>百搭符号</li>
@@ -132,13 +135,16 @@
                 </li>
               </ul>
             </div>
+            </div>
             <div class="iconList">
+
+              <div class="contentCenter">
+
               <ul class="iconTitleType">
                 <li><img src="images/Right_iconList_Title.png" alt="" /></li>
                 <li>分散符号</li>
               </ul>
               <ul class="iconType">
-
                 <li><img src="images/Right_iconList_1.png" alt="" /></li>
                 <li class="MoreData">
                   <ul>
@@ -214,6 +220,9 @@
                 </li>
               </ul>
             </div>
+            </div>
+
+
             <ul class="textBox">
               <li>百搭符号可以取代分散符号外所有符号</li>
             </ul>
@@ -224,7 +233,7 @@
           <div class="section bottomLine">
                 <h4>主游戏</h4>
                 <div class="contentCenter mainGame">
-                <img src="images/mainGame.jpeg" alt="">
+                <img src="images/mainGame.png" alt="">
                 </div>
                 <ul class="textBox">
               
@@ -301,6 +310,7 @@
           </div>
 
           </div>
+        </div>
 
 
 
@@ -310,6 +320,9 @@
       </div>
     <!-- wrap End -->
     </div>
-    <script src="js/type.js"></script>
+    <!-- 獲取JSON資料 -->
+    <script src="js/dataGet.js"></script>
+    <!-- 網頁動態 -->
+    <script src="js/actionType.js"></script>
   </body>
 </html>
