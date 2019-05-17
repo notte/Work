@@ -14,7 +14,6 @@ $.ajax({
     }
 
     function CreateIcon (data,a){
-      console.log(data[0].iconSrc)
       $("#contentIcon"+ a ).append(
         "<ul class='iconType'>"+
             "<li><img src="+ data[a].iconSrc + "></li>"+
@@ -48,31 +47,30 @@ $.ajax({
     // [0]為第一區塊，取得icon列表
     // IconList為左列(0)或者右列(1)
     var Obj = data[0].IconList0
-    console.log(Obj)
+    // console.log(Obj)
     // 取得刪除外層標題之後的內容
     var ObjName = Object.values(Obj)
-    console.log(ObjName)
+    // console.log(ObjName)
 
     // icon標題物件
-    console.log(ObjName[0])
-    // 標題字
-    console.log(ObjName[0].TitleName)
-    // 標題圖
-    console.log(ObjName[0].iconTitleSrc)
+    // console.log(ObjName[0])
+    // // 標題字
+    // console.log(ObjName[0].TitleName)
+    // // 標題圖
+    // console.log(ObjName[0].iconTitleSrc)
 
     // 加到網頁裡
     CreateTitle(ObjName,0)
 
     // 處理完後刪除標題
-    console.log(ObjName.splice(0,1))
+    ObjName.splice(0,1)
     // 取得剩餘列表內容
-    console.log(ObjName)
+    // console.log(ObjName)
 
     // 逐步取得icon圖片及數字陣列
     for(i=0;i<ObjName.length;i++){
-      console.log(ObjName[i].iconSrc)
-      console.log(ObjName[i].iconContent)
-      // CreateIcon (ObjName,i)
+      CreateIcon(ObjName
+        )
     }
 
 
