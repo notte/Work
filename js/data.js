@@ -4,13 +4,56 @@ $.ajax({
   async: true
   }).done(function (response) {
 
+    
 
+    function MoreData(data,a){
+
+      // 把資料夾進節點
+      function PUSH(){
+        Li.appendChild(Span)
+        Li.appendChild(SecSpan)
+        UL.appendChild(Li)
+        DOM.append(UL)
+      }
+
+      function PushData(data,a){
+
+        // 這裡的a為第幾個icon、i為第幾行資料
+        // 把物件中賠倍的數據push到網頁中
+        for(var v=0;v<data[a].iconContent.length;v++){
+          Span.innerHTML = data[a].iconContent[i][0]
+          SecSpan.innerHTML = data[a].iconContent[i][1]
+        }
+        
+      }
+
+
+      // a紀錄第幾個icon
+      // data[a].iconContent.length為應該有幾行資料
+      // data[a].iconContent.length*2為資料筆數
+
+      // 產生DOM元素
+      for(var i=0;i<data[a].iconContent.length;i++){
+
+        var DOM = $(".MoreData"+a)
+
+        var UL = document.createElement('ul')
+        var Li = document.createElement('li')
+        var Span = document.createElement('span')
+        var SecSpan = document.createElement('span')
+        SecSpan.className = "SecSpan"
+
+        PushData(data,a)
+        PUSH()
+      }
+
+    }
 
     function CreateTitle (data,a,c){
       $(".IconList"+c ).append(
         "<li><img src="+ data[a].iconTitleSrc +"></li>" +
-        "<li>" + data[a].TitleName  + "</li>" +
-        "<li>" + data[a].TitleName1  + "</li>"
+        "<li>" + data[a].TitleName  + "</li>"
+        // "<li>" + data[a].TitleName1  + "</li>"
       );
     }
 
@@ -18,34 +61,10 @@ $.ajax({
       $(".IconBox"+c).append(
         "<ul class='iconType'>"+
             "<li><img src="+ data[a].iconSrc + "></li>"+
-            "<li class='MoreData'>"+
-              "<ul>"+
-                "<li>"+
-                    "<span>" + data[a].iconContent[0] + "</span>"+
-                    "<span>" + data[a].iconContent[1] + "</span>"+
-                    "</li>"+
-              "</ul>"+
-              "<ul>"+
-                "<li>"+
-                    "<span>" + data[a].iconContent[2] + "</span>"+
-                    "<span>" + data[a].iconContent[3] + "</span>"+
-                    "</li>"+
-              "</ul>"+
-              "<ul>"+
-                "<li>"+
-                    "<span>" + data[a].iconContent[4] + "</span>"+
-                    "<span>" + data[a].iconContent[5] + "</span>"+
-                    "</li>"+
-              "</ul>"+
+            "<li class="+ 'MoreData'+a +">"+
             "</li>" +
       "</ul>");
-    }
-
-    function textBox(data,a){
-
-      var TextUL = createElement('ul')
-      var TextLI = createElement('li')
-
+      MoreData(data,a)
     }
 
     // 整個遊戲資料
@@ -62,7 +81,7 @@ $.ajax({
     // 處理完後刪除標題
     ObjName.splice(0,1)
     // 逐步取得icon圖片及數字陣列
-    for(i=0;i<ObjName.length;i++){
+    for(var i=0;i<ObjName.length;i++){
       CreateIcon(ObjName,i,0)
     }
 
@@ -74,16 +93,12 @@ $.ajax({
     CreateTitle(ObjName,0,1)
     ObjName.splice(0,1)
 
-    for(i=0;i<ObjName.length;i++){
+    for(var i=0;i<ObjName.length;i++){
       CreateIcon(ObjName,i,1)
     }
 
-
-
-    // TextBox1
-    for(var i=0;i<Obj.length;i++){
-      
-    }
+    ObjName = ""
+    ObjCut = ""
 
 
   

@@ -7,23 +7,23 @@
     },
     "icon1":{
       "iconSrc":"images/Left_iconList_1.png",
-      "iconContent":[5,800,4,200,3,120]
+      "iconContent":[[5,800],[4,200],[3,120]]
     },
     "icon2":{
       "iconSrc":"images/Left_iconList_2.png",
-      "iconContent":[5,320,4,160,3,80]
+      "iconContent":[[5,320],[4,160],[3,80]]
     },
     "icon3":{
       "iconSrc":"images/Left_iconList_3.png",
-      "iconContent":[5,80,4,40,3,20]
+      "iconContent":[[5,80],[4,40],[3,20]]
     },
     "icon4":{
       "iconSrc":"images/Left_iconList_4.png",
-      "iconContent":[5,80,4,40,3,20]
+      "iconContent":[[5,80],[4,40],[3,20]]
     },
     "icon5":{
       "iconSrc":"images/Left_iconList_5.png",
-      "iconContent":[5,80,4,40,3,20]
+      "iconContent":[[5,80],[4,40],[3,20]]
     }
   },
   "IconList1":{
@@ -33,19 +33,19 @@
     },
     "icon1":{
       "iconSrc":"images/Right_iconList_1.png",
-      "iconContent":[5,800,4,200,3,120]
+      "iconContent":[[5,800],[4,200],[3,120]]
     },
     "icon2":{
       "iconSrc":"images/Right_iconList_2.png",
-      "iconContent":[5,320,4,160,3,80]
+      "iconContent":[[5,320],[4,160],[3,80]]
     },
     "icon3":{
       "iconSrc":"images/Right_iconList_3.png",
-      "iconContent":[5,80,4,40,3,20]
+      "iconContent":[[5,80],[4,40],[3,20]]
     },
     "icon4":{
       "iconSrc":"images/Right_iconList_4.png",
-      "iconContent":[5,80,4,40,3,20]
+      "iconContent":[[5,80],[4,40],[3,20]]
     }
   },
   "TextBox1":[
