@@ -6,36 +6,16 @@ $.ajax({
 
     
 
-    function MoreData(data,a){
+    function MoreData(data,i,c){
 
-      // 把資料夾進節點
-      function PUSH(){
-        Li.appendChild(Span)
-        Li.appendChild(SecSpan)
-        UL.appendChild(Li)
-        DOM.append(UL)
-      }
+      // data[a] 運行幾次，就代表有幾個icon
+      // data[a].iconContent 為對應icon數量的賠倍資料
+      // data.length為icon數量
 
-      function PushData(data,a){
+      for(var n=0;n<data[i].iconContent.length;n++){
 
-        // 這裡的a為第幾個icon、i為第幾行資料
-        // 把物件中賠倍的數據push到網頁中
-        for(var v=0;v<data[a].iconContent.length;v++){
-          Span.innerHTML = data[a].iconContent[i][0]
-          SecSpan.innerHTML = data[a].iconContent[i][1]
-        }
-        
-      }
-
-
-      // a紀錄第幾個icon
-      // data[a].iconContent.length為應該有幾行資料
-      // data[a].iconContent.length*2為資料筆數
-
-      // 產生DOM元素
-      for(var i=0;i<data[a].iconContent.length;i++){
-
-        var DOM = $(".MoreData"+a)
+      // 擷取當前要新增的Li位置
+        var DOM = $(".IconBox"+c).children().children('.MoreData'+i)
 
         var UL = document.createElement('ul')
         var Li = document.createElement('li')
@@ -43,9 +23,20 @@ $.ajax({
         var SecSpan = document.createElement('span')
         SecSpan.className = "SecSpan"
 
-        PushData(data,a)
-        PUSH()
+        Span.innerHTML = data[i].iconContent[n][0]
+        SecSpan.innerHTML = data[i].iconContent[n][1]
+
+        Li.appendChild(Span)
+        Li.appendChild(SecSpan)
+        UL.appendChild(Li)
+        DOM.append(UL)
+
       }
+
+        UL = ""
+        Li = ""
+        Span = ""
+        SecSpan = ""
 
     }
 
@@ -53,18 +44,17 @@ $.ajax({
       $(".IconList"+c ).append(
         "<li><img src="+ data[a].iconTitleSrc +"></li>" +
         "<li>" + data[a].TitleName  + "</li>"
-        // "<li>" + data[a].TitleName1  + "</li>"
       );
     }
 
     function CreateIcon (data,a,c){
+      // a=i=第幾個icon，c為判斷左列還右列
       $(".IconBox"+c).append(
         "<ul class='iconType'>"+
             "<li><img src="+ data[a].iconSrc + "></li>"+
             "<li class="+ 'MoreData'+a +">"+
             "</li>" +
       "</ul>");
-      MoreData(data,a)
     }
 
     // 整個遊戲資料
@@ -82,19 +72,27 @@ $.ajax({
     ObjName.splice(0,1)
     // 逐步取得icon圖片及數字陣列
     for(var i=0;i<ObjName.length;i++){
+
+      // ObjName.length為icon的數量
+      // i為第幾個icon
       CreateIcon(ObjName,i,0)
+      MoreData(ObjName,i,0)
     }
 
+    // 清空資料
     ObjName = ""
     ObjCut = ""
 
+    // 取得第一區塊的右列
     ObjCut = Obj[0].IconList1
     ObjName = Object.values(ObjCut)
     CreateTitle(ObjName,0,1)
     ObjName.splice(0,1)
 
     for(var i=0;i<ObjName.length;i++){
+      // ObjName.length為icon的數量
       CreateIcon(ObjName,i,1)
+      MoreData(ObjName,i,1)
     }
 
     ObjName = ""
