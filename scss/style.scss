@@ -38,7 +38,7 @@ body {
     // 內文字
     li{
         font-size: 13px;
-        line-height: 20px;
+        line-height: 16px;
     }
 
     .textIndent{
@@ -55,12 +55,15 @@ body {
     //置中
     .contentCenter{
         text-align: center;
-        margin-bottom: 10px;
     }
 
     // 間隔10px
     .SecSpan {
         margin-left: 10px;
+    }
+    img{
+        width: 100%;
+        height: auto;
     }
 
 
@@ -106,11 +109,11 @@ body {
                 overflow-y: scroll;
 
                 .scrollBox{
-                    width: 90%;
+                    width: 95%;
                 }
 
                 .textBox{
-                    padding-bottom: 10px;
+                    padding: 10px 0;
                 }
 
 
@@ -120,10 +123,10 @@ body {
 
                     // 第一區塊icon列表
                     .iconList {
-                        width: 49%;
                         display: inline-block;
-                        margin-bottom: 10px;
                         vertical-align: top;
+                        text-align: left;
+                        width: 49%;
 
                         ul {
 
@@ -143,27 +146,37 @@ body {
 
                             li:nth-child(1) img {
                                 width: 70px;
-                                padding: 5px;
+                                padding: 0 10px;
                             }
                         }
 
-                        // icon Title樣式
-                        .iconTitleType{
-                            width:100%;
-                            height: auto;
 
+                        .TitleBox{
+                            height: 120px;
+                            // icon Title樣式
+                            .iconTitleType{
+                                width:100%;
+                                position: relative;
+                                top: 50%;
+                                transform: translateY(-50%);
 
-                            li:nth-child(1) img {
-                                width: 80px;
-                                padding: 0;
-                            }
-                            p{
-                                font-size: 15px;
+                                li:nth-child(1) img {
+                                    width: 80px;
+                                    padding: 0 5px;
+                                }
+                                li:nth-child(2) {
+                                    width: 48%;
+                                }
+                                p{
+                                    font-size: 15px;
+                                }
                             }
                         }
                         
                         // icon內容樣式
                         .iconType {
+                            margin-top: 10px;
+
                             .MoreData{
                                 ul{
                                     margin-bottom: 0;
@@ -177,35 +190,37 @@ body {
                     }
 
                     // 主遊戲圖片尺寸
-                    .mainGame{
-                        img{
-                            width: 80%;
-                        }
-                    }
+                    // .mainGame{
+                    //     img{
+                    //         width: 100%;
+                    //     }
+                    // }
                 }
 
                 // 圖片並排Box
-                .img_Box{
-                    margin-top: 10px;
-                    img{
-                        width: 20%;
-                        display: inline-block;
-                        margin: 0 5px;
-                    }
+                // .img_Box{
+                //     margin-top: 10px;
+                //     img{
+                //         width: 20%;
+                //         display: inline-block;
+                //         margin: 0 5px;
+                //     }
 
-                    // 免費遊戲第二區塊before & after
-                    .freeGame_Box{
-                        img:nth-child(1),
-                        img:nth-child(3){
-                            width: 38%;
-                            vertical-align: middle;
-                        }
-                        img:nth-child(2){
-                            width: 9%;
-                            vertical-align: middle;
-                        }
-                    }
-                }
+                //     // 免費遊戲第二區塊before & after
+                //     .freeGame_Box{
+                //         img:nth-child(1),
+                //         img:nth-child(3){
+                //             width: 38%;
+                //             vertical-align: middle;
+                //         }
+                //         img:nth-child(2){
+                //             width: 9%;
+                //             vertical-align: middle;
+                //         }
+                //     }
+                // }
+
+
                 // 中獎線列表圖，15%一排五個、20%一排4個
                 .winLine_Box{
                     img{
