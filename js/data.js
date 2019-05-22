@@ -183,10 +183,7 @@ $.ajax({
     ObjName = ""
     ObjCut = ""
 
-    var Last = Obj[0]
-    Last = Object.values(Last)
-
-    Last.splice(0,3)
+    var Last = Obj[0].TextBox
     CreateTextBox(Last)
 
     var PayBay = $('#first')
@@ -249,7 +246,5 @@ $.ajax({
     }
 
     GameRules.children().last().removeClass('bottomLine')
-
-    console.log(data)
   
 })
