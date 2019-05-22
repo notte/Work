@@ -1,6 +1,6 @@
 // 背景顏色
 $background_color: #613B2D;
-// 主色、標題色
+// 頁籤被選中、標題色
 $mainColor:#f1b317;
 // 分隔線色
 $lineColor:#43281C;
@@ -22,6 +22,9 @@ body {
         font-weight: 400;
         // 切換內文字
         color: $textColor;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+             box-sizing: border-box;
     }
 
     // 主色class
@@ -86,7 +89,7 @@ body {
         // 外層容器
         .container {
             height: 100vh;
-            padding: 5%;
+            padding: 15px;
             overflow: hidden;
 
             // 預設Tab樣式
@@ -104,13 +107,16 @@ body {
             }
             
             // 內層滾動容器
+            .scroll_container::-webkit-scrollbar { width: 0}
             .scroll_container {
-                width: 110%;
-                height: 85%;
+                overflow: -moz-scrollbars-none;
+                width:111%;
+                height: 91%;
                 overflow-y: scroll;
 
                 .scrollBox{
-                    width: 91%;
+                    width: 90%;
+
                 }
 
                 .textBox{

@@ -6,32 +6,28 @@ $.ajax({
 
     function CreateImgTextBox(data,Box){
 
-    // 建立外層區塊
     var sectionBox = document.createElement('div')
     sectionBox.classList = "section bottomLine"
     var sectionTitle = document.createElement('h4')
-    // 放置標題
+
     sectionTitle.innerHTML = data[0]
     sectionBox.appendChild(sectionTitle)
-    // 刪除標題
+    
     data.splice(0,1)
 
     for(var s = 0;s<data.length;s++){
 
       if(data[s].ImgBox){
-        // 建立圖片區塊
         var ImgBox = document.createElement('div')
         ImgBox.className = "contentCenter"
         var ImgItem = document.createElement('img')
         ImgItem.src = data[s].ImgBox
         ImgBox.append(ImgItem)
         sectionBox.append(ImgBox)
-        // 刪除圖片
         ImgBox = ""
         ImgItem = ""
       }
 
-    // 建立文字區塊
     var UL = document.createElement('ul')
     UL.className = "textBox"
 
@@ -109,7 +105,7 @@ $.ajax({
 
     function MoreData(data,i,c){
       for(var n=0;n<data[i].iconContent.length;n++){
-      // 擷取當前要新增的Li位置
+
         var DOM = $(".IconBox"+c).children().children('.MoreData'+i)
         var UL = document.createElement('ul')
         var Li = document.createElement('li')
@@ -140,7 +136,6 @@ $.ajax({
     }
 
     function CreateIcon (data,a,c){
-      // a=i=第幾個icon，c為判斷左列還右列
       $(".IconBox"+c).append(
         "<ul class='iconType'>"+
             "<li><img src="+ data[a].iconSrc + "></li>"+
@@ -151,16 +146,11 @@ $.ajax({
 
     // 整個遊戲資料
     var data = response
-    // 複製完整的data複製到新的物件
+
     var Obj = data.slice(0)
-    
-    // [0]為第一區塊，取得icon列表，IconList為左列(0)或者右列(1)
     var ObjCut = Obj[0].IconList0
-    
-    // 取得刪除外層標題之後的內容
     var ObjName = Object.values(ObjCut)
 
-    // 加到網頁裡
     CreateTitle(ObjName,0,0)
 
     if(ObjCut.iconTitle.iconContent || ObjCut.iconTitle.TextBox1){
@@ -170,9 +160,8 @@ $.ajax({
       TitleMoreData(ObjTitle)
     }
 
-    // 處理完後刪除標題
     ObjName.splice(0,1)
-    // 逐步取得icon圖片及數字陣列
+
     for(var i=0;i<ObjName.length;i++){
       CreateIcon(ObjName,i,0)
       MoreData(ObjName,i,0)
@@ -181,7 +170,6 @@ $.ajax({
     ObjName = ""
     ObjCut = ""
 
-    // 取得第一區塊的右列
     ObjCut = Obj[0].IconList1
     ObjName = Object.values(ObjCut)
     CreateTitle(ObjName,0,1)
@@ -197,11 +185,9 @@ $.ajax({
 
     var Last = Obj[0]
     Last = Object.values(Last)
-    // 
+
     Last.splice(0,3)
     CreateTextBox(Last)
-
-    // 第一區塊結束
 
     var PayBay = $('#first')
 
@@ -219,16 +205,15 @@ $.ajax({
 
     }
 
-    // 中獎線
     for(var i = 3; i<5;i++){
 
       var ObjCut = Obj[i]
 
-      if(Obj[i].BoxTitle == "中奖线"){
+    if(Obj[i].BoxTitle == "中奖线"){
+
     var sectionBox = document.createElement('div')
     sectionBox.classList = "section"
     var sectionTitle = document.createElement('h4')
-    // 放置標題
     sectionTitle.innerHTML = Obj[i].BoxTitle
     sectionBox.appendChild(sectionTitle)
 
@@ -250,7 +235,6 @@ $.ajax({
 
     }
 
-    // 遊戲規則
     var GameRules = $('#second')
     for(var i=4;i<data.length;i++){
       
@@ -264,7 +248,8 @@ $.ajax({
       }
     }
 
-    // 刪除最後一個元素底線
     GameRules.children().last().removeClass('bottomLine')
+
+    console.log(data)
   
 })
