@@ -4,6 +4,52 @@ $.ajax({
   async: true
   }).done(function (response) {
 
+    function CreateImgTextBox(data,Box){
+
+    // 建立外層區塊
+    var sectionBox = document.createElement('div')
+    sectionBox.classList = "section bottomLine"
+    var sectionTitle = document.createElement('h4')
+    // 放置標題
+    sectionTitle.innerHTML = data[0]
+    sectionBox.appendChild(sectionTitle)
+    // 刪除標題
+    data.splice(0,1)
+
+    for(var s = 0;s<data.length;s++){
+
+      if(data[s].ImgBox){
+        // 建立圖片區塊
+        var ImgBox = document.createElement('div')
+        ImgBox.className = "contentCenter"
+        var ImgItem = document.createElement('img')
+        ImgItem.src = data[s].ImgBox
+        ImgBox.append(ImgItem)
+        sectionBox.append(ImgBox)
+        // 刪除圖片
+        ImgBox = ""
+        ImgItem = ""
+      }
+
+    // 建立文字區塊
+    var UL = document.createElement('ul')
+    UL.className = "textBox"
+
+    for(var i=0;i<data[s].TextBox.length;i++){
+      var Li = document.createElement('li')
+      Li.innerHTML = data[s].TextBox[i]
+      UL.appendChild(Li)
+      Li = ""
+    }
+
+    sectionBox.appendChild(UL)
+    UL=""
+    Li = ""
+    }
+
+    Box.append(sectionBox)
+    }
+
     function CreateTextBox(data){
 
       var DOM = $('#step1')
@@ -157,35 +203,68 @@ $.ajax({
 
     // 第一區塊結束
 
+    var PayBay = $('#first')
 
-    // 建立外層區塊
+    for(var i = 1; i<=3;i++){
 
+      var ObjCut = Obj[i]
+
+      if(Obj[i].BoxTitle == "主游戏"||"奖励游戏"||"免费游戏"){
+
+        var ImgText = Object.values(ObjCut)
+        CreateImgTextBox(ImgText,PayBay)
+        ImgText = ""
+
+      }
+
+    }
+
+    // 中獎線
+    for(var i = 3; i<5;i++){
+
+      var ObjCut = Obj[i]
+
+      if(Obj[i].BoxTitle == "中奖线"){
     var sectionBox = document.createElement('div')
-    sectionBox.classList = "section bottomLine"
-
+    sectionBox.classList = "section"
     var sectionTitle = document.createElement('h4')
-    sectionTitle.innerHTML = data[1].BoxTitle
+    // 放置標題
+    sectionTitle.innerHTML = Obj[i].BoxTitle
     sectionBox.appendChild(sectionTitle)
 
 
-    // 建立圖片區塊
-    var ImgBox = document.createElement('div')
-    ImgBox.className = "contentCenter"
-    var ImgItem = document.createElement('img')
-    ImgItem.src = data[1]['ImgBox1']
-    ImgBox.append(ImgItem)
-    sectionBox.append(ImgBox)
-    
+    var winLine = document.createElement('div')
+    winLine.classList = "img_Box winLine_Box contentCenter"
 
-    console.log(sectionBox)
+    sectionBox.append(winLine)
+    PayBay.append(sectionBox)
 
+    for(var v=1;v<=Obj[i].ImgBox1.length;v++){
+        let winLineImg = document.createElement('img')
+        winLine.appendChild(winLineImg)
 
+        var imgSrc = "images/winLine/" + v + ".png"
+        winLineImg.src = imgSrc
+    }
+      }
 
+    }
 
-    // console.log(data[1]["BoxTitle"])
+    // 遊戲規則
+    var GameRules = $('#second')
+    for(var i=4;i<data.length;i++){
+      
+      var ObjCut = Obj[i]
+      if(Obj[i].BoxTitle == "中奖线"){
+        for(var secStart =i+1;secStart<data.length;secStart++){
+        var ObjCut = Obj[secStart]
+        ImgText = Object.values(ObjCut)
+        CreateImgTextBox(ImgText,GameRules)
+        }
+      }
+    }
 
-
-
-
+    // 刪除最後一個元素底線
+    GameRules.children().last().removeClass('bottomLine')
   
 })

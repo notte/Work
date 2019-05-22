@@ -1,16 +1,3 @@
-let winLine = document.querySelector('.winLine_Box')
-
-for(var i=1;i<=40;i++){
-
-    let winLineImg = document.createElement('img')
-    winLine.appendChild(winLineImg)
-    
-    var imgSrc = "images/winLine/" + i + ".png"
-    winLineImg.src = imgSrc
-
-}
-
-
 // 取得Tab的所有class標籤，會獲取一個陣列
 let tabSwitch = document.getElementsByClassName("tab_switch")
 let firstBox = document.getElementById("first")

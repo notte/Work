@@ -1,4 +1,5 @@
-[{
+[
+  {
   "BoxTitle":"游戏图标",
   "IconList0":{
     "iconTitle":{
@@ -53,44 +54,127 @@
   ]
 },{
   "BoxTitle":"主游戏",
-  "ImgBox1":[
-    "images/mainGame.png"
-  ],
-  "TextBox1":[
-    "随机获得彩金倍率2~6倍",
-    "每次连线都会获得彩金乘倍，最高加乘10倍"
-  ]
-},{
+  "Item1":{
+    "ImgBox":[
+      "images/mainGame.png"
+    ],
+    "TextBox":[
+      "随机获得彩金倍率2~6倍",
+      "每次连线都会获得彩金乘倍，最高加乘<span class='hightColor'>10倍</span>"
+    ]
+  }
+},
+{
   "BoxTitle":"奖励游戏",
-  "ImgBox1":[
-    "images/mainGame.png"
-  ],
-  "TextBox1":[
-    "随机获得彩金倍率2~6倍",
-    "每次连线都会获得彩金乘倍，最高加乘10倍"
-  ]
-},{
+  "Item1":{
+    "ImgBox":[
+      "images/Left_iconList_1.png"
+    ],
+    "TextBox":[
+      "分散图标只会出现在1、3、5轮",
+      "当盘面同时出现3个分散图标时，进入免费游戏"
+    ]
+  },
+  "Item2":{
+    "ImgBox":[
+      "images/Left_iconList_3.png"
+    ],
+    "TextBox":[
+      "盘面上出现百搭符号，下次SPIN时，百搭符号向右移动一格，直到移出盘面",
+      "当盘面同时出现3个分散图标时，进入免费游戏"
+    ]
+  }
+},
+{
   "BoxTitle":"免费游戏",
-  "ImgBox1":[
-    "images/Right_iconList_Title.png",
-    "images/Right_iconList_Title.png",
-    "images/Right_iconList_Title.png"
-  ],
-  "TextBox1":[
-    "分散图标只会出现在1、3、5轮",
-    "当盘面同时出现3个分散图标时，进入免费游戏"
-  ],
-  "ImgBox2":[
-    "images/freeGame_before.jpeg",
-    "images/freeGame_arrow.png",
-    "images/freeGame_before.jpeg"
-  ],
-  "TextBox2":[
-    "盘面上出现百搭符号，下次SPIN时，百搭符号向右移动一格，直到移出盘面",
-    "当盘面同时出现3个分散图标时，进入免费游戏"
-  ]
-},{
+  "Item1":{
+    "ImgBox":[
+      "images/Right_iconList_4.png"
+    ],
+    "TextBox":[
+      "盘面上出现百搭符号动一格，直到移出盘面",
+      "盘面上出现百搭符号，下次SPIN时，百搭符号向右移动一格，直到移出盘面",
+      "当盘面同时出现3个分散图标时，进入免费游戏"
+    ]
+  }
+},
+{
   "BoxTitle":"中奖线",
   "ImgBox1":[
-    "images/winLine/1.png"]
+    "images/winLine/1.png",
+    "images/winLine/2.png",
+    "images/winLine/3.png",
+    "images/winLine/4.png",
+    "images/winLine/5.png",
+    "images/winLine/6.png",
+    "images/winLine/7.png",
+    "images/winLine/8.png",
+    "images/winLine/9.png",
+    "images/winLine/10.png",
+    "images/winLine/11.png",
+    "images/winLine/12.png",
+    "images/winLine/13.png",
+    "images/winLine/14.png",
+    "images/winLine/15.png",
+    "images/winLine/16.png",
+    "images/winLine/17.png",
+    "images/winLine/18.png",
+    "images/winLine/19.png",
+    "images/winLine/20.png",
+    "images/winLine/21.png",
+    "images/winLine/22.png",
+    "images/winLine/23.png",
+    "images/winLine/24.png",
+    "images/winLine/25.png",
+    "images/winLine/26.png",
+    "images/winLine/27.png",
+    "images/winLine/28.png",
+    "images/winLine/29.png",
+    "images/winLine/30.png",
+    "images/winLine/31.png",
+    "images/winLine/32.png",
+    "images/winLine/33.png",
+    "images/winLine/34.png",
+    "images/winLine/35.png",
+    "images/winLine/36.png",
+    "images/winLine/37.png",
+    "images/winLine/38.png",
+    "images/winLine/39.png",
+    "images/winLine/40.png"
+  ]
+},
+{
+  "BoxTitle":"多福多财",
+  "Item1":{
+    "TextBox":[
+      "多福多财是一款4x5的老虎机游戏，在中奖线上由左至右至少连续三个相同图标就算中奖。",
+      "押注：可调整押注金额以及兑分比,可切换不同兑分,下注不同金额。",
+      "加速：可调整滚轮节奏,加快游戏速度。",
+      "挂机：可自动进行游戏,长按可选择回合数量。"
+    ]
+  }
+},
+{
+  "BoxTitle":"主游戏",
+  "Item1":{
+    "ImgBox":[
+      "images/Right_iconList_4.png"
+    ],
+    "TextBox":[
+      "每次押注都有机会触发财神赠送倍率，该回合若中奖，便可获得相同倍率的彩金。",
+      "连续中奖时，获得的彩金也会随着加倍。"
+    ]
+  }
+},
+{
+  "BoxTitle":"免费游戏",
+  "Item1":{
+    "ImgBox":[
+      "images/Right_iconList_4.png"
+    ],
+    "TextBox":[
+      "免费游戏中，每次下注，盘面上的百搭图标会保留在盘面上并向右移动一格，直到离开盘面。",
+      "获得越多的百搭图标，越容易增加连续中奖的倍率。"
+    ]
+  }
 }]

@@ -33,6 +33,7 @@ body {
     h4{
         text-align: center;
         margin: 15px 0;
+        color:$mainColor;
     }
 
     // 內文字
@@ -109,7 +110,7 @@ body {
                 overflow-y: scroll;
 
                 .scrollBox{
-                    width: 95%;
+                    width: 91%;
                 }
 
                 .textBox{
@@ -133,6 +134,7 @@ body {
                             li {
                                 display: inline-block;
                                 vertical-align: middle;
+                                width: 50%;
 
                                 img{
                                     vertical-align: middle;
@@ -144,9 +146,11 @@ body {
                                 }
                             }
 
-                            li:nth-child(1) img {
-                                width: 70px;
-                                padding: 0 10px;
+                            li:nth-child(1) {
+                                text-align: center;
+                                img {
+                                    width: 60px;
+                                }
                             }
                         }
 
@@ -161,8 +165,8 @@ body {
                                 transform: translateY(-50%);
 
                                 li:nth-child(1) img {
-                                    width: 80px;
-                                    padding: 0 5px;
+                                    width: 70px;
+                                    // padding: 0 5px;
                                 }
                                 li:nth-child(2) {
                                     width: 48%;
@@ -189,36 +193,10 @@ body {
                         }
                     }
 
-                    // 主遊戲圖片尺寸
-                    // .mainGame{
-                    //     img{
-                    //         width: 100%;
-                    //     }
-                    // }
+                    
                 }
 
-                // 圖片並排Box
-                // .img_Box{
-                //     margin-top: 10px;
-                //     img{
-                //         width: 20%;
-                //         display: inline-block;
-                //         margin: 0 5px;
-                //     }
-
-                //     // 免費遊戲第二區塊before & after
-                //     .freeGame_Box{
-                //         img:nth-child(1),
-                //         img:nth-child(3){
-                //             width: 38%;
-                //             vertical-align: middle;
-                //         }
-                //         img:nth-child(2){
-                //             width: 9%;
-                //             vertical-align: middle;
-                //         }
-                //     }
-                // }
+                
 
 
                 // 中獎線列表圖，15%一排五個、20%一排4個
