@@ -11,6 +11,9 @@ for(var i=0;i<tabSwitch.length;i++){
 
     // 在Tab被觸發時執行function
     tabSwitch[i].onclick=function(){
+        
+        // 捲軸歸零
+        $('.scroll_container').scrollTop(0)
 
         // 刪除所有active的class
         for(var i=0;i<tabSwitch.length;i++){

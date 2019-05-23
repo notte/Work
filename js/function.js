@@ -1,6 +1,10 @@
-function Data(data){
+$.ajax({
+  url: "js/data/game_01.json",
+  type: 'GET',
+  async: true
+  }).done(function (response) {
 
-  function CreateImgTextBox(data,Box){
+    function CreateImgTextBox(data,Box){
 
     var sectionBox = document.createElement('div')
     sectionBox.classList = "section bottomLine"
@@ -140,6 +144,9 @@ function Data(data){
       "</ul>");
     }
 
+    // 整個遊戲資料
+    var data = response
+
     var Obj = data.slice(0)
     var ObjCut = Obj[0].IconList0
     var ObjName = Object.values(ObjCut)
@@ -227,6 +234,7 @@ function Data(data){
 
     var GameRules = $('#second')
     for(var i=4;i<data.length;i++){
+      
       var ObjCut = Obj[i]
       if(Obj[i].BoxTitle == "中奖线"){
         for(var secStart =i+1;secStart<data.length;secStart++){
@@ -239,4 +247,4 @@ function Data(data){
 
     GameRules.children().last().removeClass('bottomLine')
   
-} 
+})

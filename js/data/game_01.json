@@ -1,5 +1,5 @@
 [
-  {
+{
   "BoxTitle":"游戏图标",
   "IconList0":{
     "iconTitle":{
@@ -34,7 +34,7 @@
       "iconTitleSrc":"images/Right_iconList_Title.png"
     },
     "icon1":{
-      "iconSrc":"images/Right_iconList_1.png",
+      "iconSrc":"images/Right_iconList_2.png",
       "iconContent":[[5,800],[4,200],[3,120]]
     },
     "icon2":{
@@ -56,7 +56,8 @@
     "＊仅支付每条线上所中奖的最高金额。",
     "＊仅支付每条线上所中奖的最高金额。"
   ]
-},{
+},
+{
   "BoxTitle":"主游戏",
   "Item1":{
     "ImgBox":[
@@ -72,7 +73,7 @@
   "BoxTitle":"奖励游戏",
   "Item1":{
     "ImgBox":[
-      "images/Left_iconList_1.png"
+      "images/RewardGame.png"
     ],
     "TextBox":[
       "＊分散图标只会出现在1、3、5轮",
@@ -86,7 +87,7 @@
   "BoxTitle":"免费游戏",
   "Item1":{
     "ImgBox":[
-      "images/Right_iconList_4.png"
+      "images/freeGame_1.png"
     ],
     "TextBox":[
       "＊每回和青蛙会吃掉一种昆虫并将其变成百搭符号"
@@ -94,7 +95,7 @@
   },
   "Item2":{
     "ImgBox":[
-      "images/Right_iconList_4.png"
+      "images/freeGame_2.png"
     ],
     "TextBox":[
       "＊每<span class='hightColor'>回和青蛙会吃掉一种昆虫并将</span>其变成百搭符号"
@@ -163,7 +164,7 @@
   "BoxTitle":"开始按钮",
   "Item1":{
     "ImgBox":[
-      "images/Right_iconList_4.png"
+      "images/Function_1.png"
     ],
     "TextBox":[
       "＊按下按钮，以当前的下注额进行游戏。",
@@ -176,7 +177,7 @@
   "BoxTitle":"自动玩",
   "Item1":{
     "ImgBox":[
-      "images/Right_iconList_4.png"
+      "images/Function_2.png"
     ],
     "TextBox":[
       "＊按下按钮，设定进行次数后执行自动玩。",
@@ -188,7 +189,7 @@
   "BoxTitle":"加速按钮",
   "Item1":{
     "ImgBox":[
-      "images/Right_iconList_4.png"
+      "images/Function_3.png"
     ],
     "TextBox":[
       "＊按下按钮，调整滚轮节奏，加快游戏速度。"
@@ -199,7 +200,7 @@
   "BoxTitle":"押注按钮",
   "Item1":{
     "ImgBox":[
-      "images/Right_iconList_4.png"
+      "images/Function_4.png"
     ],
     "TextBox":[
       "＊按下按钮，可调整押注金额。"
