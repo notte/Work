@@ -186,12 +186,24 @@ function Data(data){
 
       var ObjCut = Obj[i]
 
-      if(Obj[i].BoxTitle == "主游戏"||"奖励游戏"||"免费游戏"){
+      if(Obj[i].BoxTitle == "主游戏"){
 
+        console.log(Obj[i].BoxTitle)
         var ImgText = Object.values(ObjCut)
         CreateImgTextBox(ImgText,PayBay)
         ImgText = ""
+      }
+      
+      if(Obj[i].BoxTitle == "奖励游戏"){
+        var ImgText = Object.values(ObjCut)
+        CreateImgTextBox(ImgText,PayBay)
+        ImgText = ""
+      }
 
+      if(Obj[i].BoxTitle == "免费游戏"){
+        var ImgText = Object.values(ObjCut)
+        CreateImgTextBox(ImgText,PayBay)
+        ImgText = ""
       }
 
     }
