@@ -1,6 +1,6 @@
 var CallJson = new XMLHttpRequest();
 
-CallJson.open('GET','https://notte.github.io/2018/js/game_01.json',true)
+CallJson.open('GET','js/data/game.json',true)
 
 CallJson.send()
 

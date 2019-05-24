@@ -56,6 +56,11 @@ body {
         color: $hightColor;
     }
 
+    // 特殊寬度
+    .TitleText{
+        width: unset !important;
+    }
+
     //置中
     .contentCenter{
         text-align: center;

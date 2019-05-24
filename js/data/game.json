@@ -4,8 +4,7 @@
   "IconList0":{
     "iconTitle":{
       "TitleName":"百搭符号",
-      "iconTitleSrc":"images/Left_iconList_Title.png",
-      "iconContent":[[5,800],[4,200],[3,120]]
+      "iconTitleSrc":"images/Left_iconList_Title.png"
     },
     "icon1":{
       "iconSrc":"images/Left_iconList_1.png",

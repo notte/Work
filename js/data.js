@@ -79,14 +79,15 @@ function Data(data){
           UL.appendChild(Li)
           DOM.append(UL)
         }
-      }else if(data.TextBox1){
+      }else if(data.TextBox){
         var DOM = $('.IconList0').children(2)
         DOM = DOM[1]
 
-        for(var i=0;i<data.TextBox1.length;i++){
+        for(var i=0;i<data.TextBox.length;i++){
           var UL = document.createElement('ul')
           var Li = document.createElement('li')
-          Li.innerHTML = data.TextBox1[i]
+          Li.className = "TitleText"
+          Li.innerHTML = data.TextBox[i]
           UL.appendChild(Li)
           DOM.append(UL)
           UL=""
@@ -146,7 +147,7 @@ function Data(data){
 
     CreateTitle(ObjName,0,0)
 
-    if(ObjCut.iconTitle.iconContent || ObjCut.iconTitle.TextBox1){
+    if(ObjCut.iconTitle.iconContent || ObjCut.iconTitle.TextBox){
       var ObjTitle = ObjCut.iconTitle
       delete ObjTitle.TitleName
       delete ObjTitle.iconTitleSrc

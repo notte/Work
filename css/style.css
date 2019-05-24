@@ -39,6 +39,10 @@ body .hightColor {
   color: #ff0000;
 }
 
+body .TitleText {
+  width: unset !important;
+}
+
 body .contentCenter {
   text-align: center;
 }
