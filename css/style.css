@@ -47,10 +47,6 @@ body .contentCenter {
   text-align: center;
 }
 
-body .SecSpan {
-  margin-left: 10px;
-}
-
 body img {
   width: 100%;
   height: auto;
@@ -128,10 +124,6 @@ body .wrap .container .scroll_container .section .iconList ul li p {
   margin: 2px 0;
 }
 
-body .wrap .container .scroll_container .section .iconList ul li:nth-child(1) {
-  text-align: center;
-}
-
 body .wrap .container .scroll_container .section .iconList ul li:nth-child(1) img {
   width: 60px;
 }
@@ -166,6 +158,11 @@ body .wrap .container .scroll_container .section .iconList .iconType {
 
 body .wrap .container .scroll_container .section .iconList .iconType .MoreData ul {
   margin-bottom: 0;
+  text-align: left;
+}
+
+body .wrap .container .scroll_container .section .iconList .iconType .MoreData ul .SpanFirst {
+  margin-right: 5px;
 }
 
 body .wrap .container .scroll_container .section .iconList .iconType .MoreData ul span {

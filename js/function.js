@@ -111,6 +111,7 @@ $.ajax({
         var UL = document.createElement('ul')
         var Li = document.createElement('li')
         var Span = document.createElement('span')
+        Span.className = "SpanFirst"
         var SecSpan = document.createElement('span')
         SecSpan.className = "SecSpan"
 
