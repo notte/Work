@@ -52,6 +52,19 @@ body img {
   height: auto;
 }
 
+body .MoreData ul {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+body .MoreData ul .SpanFirst {
+  margin-right: 10px;
+}
+
+body .MoreData ul span {
+  display: inline-block;
+}
+
 body .bottomLine {
   border-bottom: 1px solid;
   border-color: #43281C;
@@ -142,10 +155,7 @@ body .wrap .container .scroll_container .section .iconList .TitleBox .iconTitleT
 
 body .wrap .container .scroll_container .section .iconList .TitleBox .iconTitleType li:nth-child(1) img {
   width: 70px;
-}
-
-body .wrap .container .scroll_container .section .iconList .TitleBox .iconTitleType li:nth-child(2) {
-  width: 48%;
+  margin-right: 5px;
 }
 
 body .wrap .container .scroll_container .section .iconList .TitleBox .iconTitleType p {
@@ -156,17 +166,8 @@ body .wrap .container .scroll_container .section .iconList .iconType {
   margin-top: 10px;
 }
 
-body .wrap .container .scroll_container .section .iconList .iconType .MoreData ul {
-  margin-bottom: 0;
-  text-align: left;
-}
-
-body .wrap .container .scroll_container .section .iconList .iconType .MoreData ul .SpanFirst {
-  margin-right: 5px;
-}
-
-body .wrap .container .scroll_container .section .iconList .iconType .MoreData ul span {
-  display: inline-block;
+body .wrap .container .scroll_container .section .iconList .iconType li:nth-child(1) img {
+  margin: 0 10px 0 5px;
 }
 
 body .wrap .container .scroll_container .winLine_Box img {

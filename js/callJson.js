@@ -1,6 +1,6 @@
 var CallJson = new XMLHttpRequest();
 
-CallJson.open('GET','js/data/game.json',true)
+CallJson.open('GET','/game.json',true)
 
 CallJson.send()
 

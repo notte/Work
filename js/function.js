@@ -63,15 +63,17 @@ $.ajax({
 
     }
 
-    function TitleMoreData(data,i,c){
+    function TitleMoreData(data,i){
 
       if(data.iconContent){
         for(var n=0;n<data.iconContent.length;n++){
           var DOM = $('.IconList0').children(2)
           DOM = DOM[1]
+          DOM.className = "MoreData"
           var UL = document.createElement('ul')
           var Li = document.createElement('li')
           var Span = document.createElement('span')
+          Span.className = "SpanFirst"
           var SecSpan = document.createElement('span')
           SecSpan.className = "SecSpan"
   
@@ -144,6 +146,7 @@ $.ajax({
             "<li class="+ 'MoreData'+a +">"+
             "</li>" +
       "</ul>");
+      $('.iconType').children().last().addClass('MoreData')
     }
 
     // 整個遊戲資料
@@ -156,7 +159,6 @@ $.ajax({
     CreateTitle(ObjName,0,0)
 
     if(ObjCut.iconTitle.iconContent || ObjCut.iconTitle.TextBox){
-      console.log(ObjCut.iconTitle.TextBox)
       var ObjTitle = ObjCut.iconTitle
       delete ObjTitle.TitleName
       delete ObjTitle.iconTitleSrc
@@ -197,8 +199,6 @@ $.ajax({
 
 
       if(Obj[i].BoxTitle == "主游戏"){
-
-        console.log(Obj[i].BoxTitle)
         var ImgText = Object.values(ObjCut)
         CreateImgTextBox(ImgText,PayBay)
         ImgText = ""
@@ -249,11 +249,11 @@ $.ajax({
     }
 
     var GameRules = $('#second')
-    for(var i=4;i<data.length;i++){
-      
-      var ObjCut = Obj[i]
+    for(var i=0;i<data.length;i++){
+      var ObjCut = data[i]
       if(Obj[i].BoxTitle == "中奖线"){
         for(var secStart =i+1;secStart<data.length;secStart++){
+          console.log(secStart)
         var ObjCut = Obj[secStart]
         ImgText = Object.values(ObjCut)
         CreateImgTextBox(ImgText,GameRules)

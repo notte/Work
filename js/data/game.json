@@ -69,20 +69,6 @@
   }
 },
 {
-  "BoxTitle":"奖励游戏",
-  "Item1":{
-    "ImgBox":[
-      "images/RewardGame.png"
-    ],
-    "TextBox":[
-      "＊分散图标只会出现在1、3、5轮",
-      "＊当盘面同时出现3个分散图标时，进入免费游戏",
-      "＊点击叶子获得免费游戏次数",
-      "＊不吓走瓢虫，抵达终点可获得额外的游戏次数"
-    ]
-  }
-},
-{
   "BoxTitle":"免费游戏",
   "Item1":{
     "ImgBox":[
@@ -93,6 +79,14 @@
     ]
   },
   "Item2":{
+    "ImgBox":[
+      "images/freeGame_2.png"
+    ],
+    "TextBox":[
+      "＊每<span class='hightColor'>回和青蛙会吃掉一种昆虫并将</span>其变成百搭符号"
+    ]
+  },
+  "Item3":{
     "ImgBox":[
       "images/freeGame_2.png"
     ],
