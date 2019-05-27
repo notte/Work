@@ -247,7 +247,6 @@ function Data(data){
       var ObjCut = data[i]
       if(Obj[i].BoxTitle == "中奖线"){
         for(var secStart =i+1;secStart<data.length;secStart++){
-          console.log(secStart)
         var ObjCut = Obj[secStart]
         ImgText = Object.values(ObjCut)
         CreateImgTextBox(ImgText,GameRules)
