@@ -57,12 +57,9 @@ body .MoreData ul {
   text-align: left;
 }
 
-body .MoreData ul .SpanFirst {
-  margin-right: 10px;
-}
-
 body .MoreData ul span {
   display: inline-block;
+  width: 46%;
 }
 
 body .bottomLine {

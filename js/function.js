@@ -249,18 +249,21 @@ $.ajax({
     }
 
     var GameRules = $('#second')
+
     for(var i=0;i<data.length;i++){
-      var ObjCut = data[i]
-      if(Obj[i].BoxTitle == "中奖线"){
-        for(var secStart =i+1;secStart<data.length;secStart++){
-        var ObjCut = Obj[secStart]
-        ImgText = Object.values(ObjCut)
-        CreateImgTextBox(ImgText,GameRules)
-        }
+      if(Obj[i].BoxTitle == "游戏规则"){
+      for(var secStart =i;secStart<data.length;secStart++){
+      var ObjCut = Obj[secStart]
+      ImgText = Object.values(ObjCut)
+      CreateImgTextBox(ImgText,GameRules)
+      ObjCut = ""
+      ImgText = ""
+      }
       }
     }
-
-    GameRules.children().last().removeClass('bottomLine')
+    
+    $('#first').children().last().removeClass('bottomLine')
+    $('#second').children().last().removeClass('bottomLine')
 
 let tabSwitch = document.getElementsByClassName("tab_switch")
 let firstBox = document.getElementById("first")
