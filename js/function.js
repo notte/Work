@@ -19,8 +19,8 @@ $.ajax({
         ImgBox.className = "contentCenter";
         var ImgItem = document.createElement("img");
         ImgItem.src = data[s].ImgBox;
-        ImgBox.append(ImgItem);
-        sectionBox.append(ImgBox);
+        ImgBox.appendChild(ImgItem);
+        sectionBox.appendChild(ImgBox);
         ImgBox = "";
         ImgItem = "";
       }
@@ -129,27 +129,13 @@ $.ajax({
 
   function CreateTitle(data, a, c) {
     $(".IconList" + c).append(
-      "<li><img src=" +
-        data[a].iconTitleSrc +
-        "></li>" +
-        "<li>" +
-        data[a].TitleName +
-        "</li>"
+      "<li><img src=" + data[a].iconTitleSrc + "></li><li>" + data[a].TitleName + "</li>"
     );
   }
 
   function CreateIcon(data, a, c) {
     $(".IconBox" + c).append(
-      "<ul class='iconType'>" +
-        "<li><img src=" +
-        data[a].iconSrc +
-        "></li>" +
-        "<li class=" +
-        "MoreData" +
-        a +
-        ">" +
-        "</li>" +
-        "</ul>"
+      "<ul class='iconType'><li><img src=" + data[a].iconSrc + "></li>" + "<li class=" + "MoreData" + a +"></li></ul>"
     );
     $(".iconType")
       .children()
@@ -247,7 +233,7 @@ $.ajax({
       var winLine = document.createElement("div");
       winLine.classList = "img_Box winLine_Box contentCenter";
 
-      sectionBox.append(winLine);
+      sectionBox.appendChild(winLine);
       PayBay.append(sectionBox);
 
       for (var v = 1; v <= Obj[i].ImgBox1.length; v++) {
