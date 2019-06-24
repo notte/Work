@@ -1,8 +1,4 @@
-$.ajax({
-  url: "js/data/game.json",
-  type: "GET",
-  async: true
-}).done(function (response) {
+function Data(data) {
   function CreateImgTextBox(data, Box) {
     var sectionBox = document.createElement("div");
     sectionBox.className = "section bottomLine";
@@ -19,8 +15,8 @@ $.ajax({
         ImgBox.className = "contentCenter";
         var ImgItem = document.createElement("img");
         ImgItem.src = data[s].ImgBox;
-        ImgBox.appendChild(ImgItem);
-        sectionBox.appendChild(ImgBox);
+        ImgBox.append(ImgItem);
+        sectionBox.append(ImgBox);
         ImgBox = "";
         ImgItem = "";
       }
@@ -130,22 +126,26 @@ $.ajax({
   function CreateTitle(data, a, c) {
     $(".IconList" + c).append(
       "<li><img src=" +
-      data[a].iconTitleSrc +
-      "></li><li>" +
-      data[a].TitleName +
-      "</li>"
+        data[a].iconTitleSrc +
+        "></li>" +
+        "<li>" +
+        data[a].TitleName +
+        "</li>"
     );
   }
 
   function CreateIcon(data, a, c) {
     $(".IconBox" + c).append(
-      "<ul class='iconType'><li><img src=" +
-      data[a].iconSrc +
-      "></li>" +
-      "<li class=" +
-      "MoreData" +
-      a +
-      "></li></ul>"
+      "<ul class='iconType'>" +
+        "<li><img src=" +
+        data[a].iconSrc +
+        "></li>" +
+        "<li class=" +
+        "MoreData" +
+        a +
+        ">" +
+        "</li>" +
+        "</ul>"
     );
     $(".iconType")
       .children()
@@ -153,15 +153,9 @@ $.ajax({
       .addClass("MoreData");
   }
 
-  // 整個遊戲資料
-  var data = response;
   var Obj = data.slice(0);
   var ObjCut = Obj[0].IconList0;
-  // var ObjName = Object.values(ObjCut);
-
-  var ObjName = Object.keys(ObjCut).map(function (e) {
-    return ObjCut[e];
-  });
+  var ObjName = Object.values(ObjCut);
 
   CreateTitle(ObjName, 0, 0);
 
@@ -183,9 +177,7 @@ $.ajax({
   ObjCut = "";
 
   ObjCut = Obj[0].IconList1;
-  ObjName = Object.keys(ObjCut).map(function (e) {
-    return ObjCut[e];
-  });
+  ObjName = Object.values(ObjCut);
   CreateTitle(ObjName, 0, 1);
   ObjName.splice(0, 1);
 
@@ -206,25 +198,19 @@ $.ajax({
     var ObjCut = Obj[i];
 
     if (Obj[i].BoxTitle == "主游戏") {
-      var ImgText = Object.keys(ObjCut).map(function (e) {
-        return ObjCut[e];
-      });
+      var ImgText = Object.values(ObjCut);
       CreateImgTextBox(ImgText, PayBay);
       ImgText = "";
     }
 
     if (Obj[i].BoxTitle == "奖励游戏") {
-      var ImgText = Object.keys(ObjCut).map(function (e) {
-        return ObjCut[e];
-      });
+      var ImgText = Object.values(ObjCut);
       CreateImgTextBox(ImgText, PayBay);
       ImgText = "";
     }
 
     if (Obj[i].BoxTitle == "免费游戏") {
-      var ImgText = Object.keys(ObjCut).map(function (e) {
-        return ObjCut[e];
-      });
+      var ImgText = Object.values(ObjCut);
       CreateImgTextBox(ImgText, PayBay);
       ImgText = "";
     }
@@ -243,11 +229,11 @@ $.ajax({
       var winLine = document.createElement("div");
       winLine.className = "img_Box winLine_Box contentCenter";
 
-      sectionBox.appendChild(winLine);
+      sectionBox.append(winLine);
       PayBay.append(sectionBox);
 
       for (var v = 1; v <= Obj[i].ImgBox1.length; v++) {
-        var winLineImg = document.createElement("img");
+        let winLineImg = document.createElement("img");
         winLine.appendChild(winLineImg);
 
         var imgSrc = "images/winLine/" + v + ".png";
@@ -257,54 +243,18 @@ $.ajax({
   }
 
   var GameRules = $("#second");
-
   for (var i = 0; i < data.length; i++) {
-    if (Obj[i].BoxTitle == "游戏规则") {
-      for (var secStart = i; secStart < data.length; secStart++) {
+    var ObjCut = data[i];
+    if (Obj[i].BoxTitle == "中奖线") {
+      for (var secStart = i + 1; secStart < data.length; secStart++) {
         var ObjCut = Obj[secStart];
-        ImgText = Object.keys(ObjCut).map(function (e) {
-          return ObjCut[e];
-        });
+        ImgText = Object.values(ObjCut);
         CreateImgTextBox(ImgText, GameRules);
-        ObjCut = "";
-        ImgText = "";
       }
     }
   }
 
-  $("#first")
-    .children()
+  GameRules.children()
     .last()
     .removeClass("bottomLine");
-  $("#second")
-    .children()
-    .last()
-    .removeClass("bottomLine");
-
-  var tabSwitch = document.getElementsByClassName("tab_switch");
-  var firstBox = document.getElementById("first");
-  var secondBox = document.getElementById("second");
-
-  // 遍歷獲取的Tab陣列內容
-  for (var i = 0; i < tabSwitch.length; i++) {
-    tabSwitch[i].index = i;
-
-    tabSwitch[i].onclick = function () {
-      $(".scroll_container").scrollTop(0);
-
-      for (var i = 0; i < tabSwitch.length; i++) {
-        tabSwitch[i].className.remove("tab_switch_active");
-      }
-
-      tabSwitch[this.index].className.add("tab_switch_active");
-
-      if (tabSwitch[this.index].index == 0) {
-        firstBox.style.display = "block";
-        secondBox.style.display = "none";
-      } else {
-        secondBox.style.display = "block";
-        firstBox.style.display = "none";
-      }
-    };
-  }
-});
+}
