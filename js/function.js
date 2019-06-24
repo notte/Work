@@ -61,9 +61,8 @@ $.ajax({
   function TitleMoreData(data, i) {
     if (data.iconContent) {
       for (var n = 0; n < data.iconContent.length; n++) {
-        var DOM = $(".IconList0").children(2);
-        DOM = DOM[1];
-        DOM.className = "MoreData";
+        var DOM = $(".CreateTitle")
+        DOM.addClass("MoreData");
         var UL = document.createElement("ul");
         var Li = document.createElement("li");
         var Span = document.createElement("span");
@@ -80,8 +79,8 @@ $.ajax({
         DOM.append(UL);
       }
     } else if (data.TextBox) {
-      var DOM = $(".IconList0").children(2);
-      DOM = DOM[1];
+      var DOM = $(".CreateTitle")
+      DOM.addClass("MoreData");
 
       for (var i = 0; i < data.TextBox.length; i++) {
         var UL = document.createElement("ul");
@@ -131,7 +130,7 @@ $.ajax({
     $(".IconList" + c).append(
       "<li><img src=" +
       data[a].iconTitleSrc +
-      "></li><li>" +
+      "></li><li class='CreateTitle'>" +
       data[a].TitleName +
       "</li>"
     );
