@@ -1,21 +1,21 @@
 // 背景顏色
-$background_color: #613B2D;
+$background_color: #C38B44;
 // 頁籤被選中、標題色
-$mainColor:#f1b317;
+$mainColor:#F1D460;
 // 分隔線色
 $lineColor:#43281C;
 // 內文字顏色
-$textColor:#D6A487;
+$textColor:#570202;
 // 提亮色
 $hightColor:#ff0000;
 
 body {
     width: 100vw;
-    height: 100vh; 
+    height: 100vh;
     overflow: hidden;
 
     // 拿掉所有預設樣式，指定文字字型、粗細
-    *{
+    * {
         margin: 0;
         padding: 0;
         font-family: 'Noto Sans SC Sliced', sans-serif;
@@ -24,62 +24,83 @@ body {
         color: $textColor;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
-             box-sizing: border-box;
+        box-sizing: border-box;
+        list-style: none;
     }
 
     // 主色class
-    .mainColor{
+    .mainColor {
         color: $mainColor;
     }
 
+    .SpanFirst {
+        color: #EEDFBC;
+    }
+
     // 標題字
-    h4{
+    h4 {
+        color: $mainColor;
+        text-align: center !important;
+        border-radius: 99px;
+        background: #00000020;
+        padding: 10px 20px;
+        font-size: 24px;
+        width: 60%;
+        margin: 25px auto;
+    }
+
+    h5 {
+        color: #942F0F;
+        font-size: 20px;
+        border-bottom: 1px solid #ffffff2b;
         text-align: center;
-        margin: 15px 0;
-        color:$mainColor;
+        padding: 10px;
+        margin-bottom: 15px;
     }
 
     // 內文字
-    li{
+    li {
         font-size: 13px;
         line-height: 16px;
     }
 
-    .textIndent{
+    .textIndent {
         text-indent: -3em;
         margin-left: 3em;
         list-style: none;
     }
 
     // 提亮色
-    .hightColor{
+    .hightColor {
         color: $hightColor;
     }
 
     // 特殊寬度
-    .TitleText{
+    .TitleText {
         width: unset !important;
     }
 
     //置中
-    .contentCenter{
-        text-align: center;
+    .contentCenter {
+        text-align: center !important;
     }
 
     // 間隔10px
     .SecSpan {
         // margin-left: 10px;
     }
-    img{
+
+    img {
         width: 100%;
         height: auto;
     }
 
 
-    .MoreData{
-        ul{
+    .MoreData {
+        ul {
             margin-bottom: 0;
             text-align: left;
+
             span {
                 display: inline-block;
                 width: 46%;
@@ -90,9 +111,12 @@ body {
 
 
     // 下底線樣式
-    .bottomLine{
-        border-bottom: 1px solid;
-        border-color:$lineColor;
+    .ContentBox,
+    .section {
+        padding: 20px;
+        border-radius: 10px;
+        background: linear-gradient(180deg, #ffffff10 10%, #0000000d 90%);
+        margin: 20px 0;
     }
 
     // 背景圖
@@ -109,35 +133,54 @@ body {
             padding: 15px;
             overflow: hidden;
 
+            .shadow_box {
+                box-shadow: 0px 15px 10px -10px #0000003b;
+                width: 100vw;
+                margin-left: -15px;
+                margin-top: 15px;
+            }
+
             // 預設Tab樣式
             .tab_switch {
-                padding: 8px 15px;
+                width: 110px;
                 display: inline-block;
                 margin-right: -4px;
                 margin-bottom: 15px;
             }
 
+            .tab_switch:nth-child(1) {
+                margin-right: 15px;
+            }
+
             // Tab被選取樣式
             .tab_switch_active {
-                background:$mainColor;
-                color:$lineColor;
+                // background: $mainColor;
+                // color: $lineColor;
             }
-            
+
             // 內層滾動容器
-            .scroll_container::-webkit-scrollbar { width: 0}
+            .scroll_container::-webkit-scrollbar {
+                width: 0
+            }
+
             .scroll_container {
                 overflow: -moz-scrollbars-none;
-                width:111%;
+                width: 111%;
                 height: 91%;
                 overflow-y: scroll;
 
-                .scrollBox{
+                .scrollBox {
                     width: 90%;
 
                 }
 
-                .textBox{
+                .textBox {
                     padding: 10px 0;
+                }
+
+                .textBox_bottomLine {
+                    margin-bottom: 20px;
+                    border-bottom: 1px solid #ffffff2b;
                 }
 
 
@@ -159,7 +202,7 @@ body {
                                 vertical-align: middle;
                                 width: 50%;
 
-                                img{
+                                img {
                                     vertical-align: middle;
                                 }
 
@@ -177,66 +220,73 @@ body {
                         }
 
 
-                        .TitleBox{
+                        .TitleBox {
                             height: 120px;
+
                             // icon Title樣式
-                            .iconTitleType{
-                                width:100%;
+                            .iconTitleType {
+                                width: 100%;
                                 position: relative;
                                 top: 50%;
                                 transform: translateY(-50%);
 
-                                li:nth-child(1){
+                                li:nth-child(1) {
                                     img {
                                         width: 70px;
                                         margin-right: 5px;
                                     }
-                                } 
+                                }
+
                                 li:nth-child(2) {
                                     // width: 48%;
                                 }
-                                p{
+
+                                p {
                                     font-size: 15px;
                                 }
                             }
                         }
-                        
+
                         // icon內容樣式
                         .iconType {
                             margin-top: 10px;
-                            li:nth-child(1){
-                                img{
+
+                            li:nth-child(1) {
+                                img {
                                     margin: 0 10px 0 5px;
                                 }
+
                                 // padding: 0 5px;
                                 // margin-right: 10px;
                             }
                         }
                     }
 
-                    
+
                 }
 
-                
+
 
 
                 // 中獎線列表圖，15%一排五個、20%一排4個
-                .winLine_Box{
-                    img{
-                        width:15%;
+                .winLine_Box {
+                    img {
+                        width: 15%;
                         margin: 5px;
                     }
                 }
 
                 // 第二區塊隱藏&標題至左
-                #second{
+                #second {
                     display: none;
-                    h4{
+
+                    h4 {
                         text-align: left;
                     }
-                    .textBox{
-                        li{
-                            img{
+
+                    .textBox {
+                        li {
+                            img {
                                 width: 30%;
                             }
                         }

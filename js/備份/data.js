@@ -1,7 +1,7 @@
 function Data(data) {
   function CreateImgTextBox(data, Box) {
     var sectionBox = document.createElement("div");
-    sectionBox.className = "section bottomLine";
+    sectionBox.className = "section ContentBox";
     var sectionTitle = document.createElement("h4");
 
     sectionTitle.innerHTML = data[0];
@@ -256,5 +256,5 @@ function Data(data) {
 
   GameRules.children()
     .last()
-    .removeClass("bottomLine");
+    .removeClass("ContentBox");
 }
