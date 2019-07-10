@@ -219,7 +219,7 @@ function Data(data) {
   for (var i = 3; i < 5; i++) {
     var ObjCut = Obj[i];
 
-    if (Obj[i].BoxTitle == "中奖线") {
+    if (Obj[i].BoxTitle == "赔付线") {
       var sectionBox = document.createElement("div");
       sectionBox.className = "section";
       var sectionTitle = document.createElement("h4");
@@ -245,7 +245,7 @@ function Data(data) {
   var GameRules = $("#second");
   for (var i = 0; i < data.length; i++) {
     var ObjCut = data[i];
-    if (Obj[i].BoxTitle == "中奖线") {
+    if (Obj[i].BoxTitle == "赔付线") {
       for (var secStart = i + 1; secStart < data.length; secStart++) {
         var ObjCut = Obj[secStart];
         ImgText = Object.values(ObjCut);

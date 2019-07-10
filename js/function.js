@@ -3,9 +3,7 @@ $.ajax({
   type: "GET",
   async: true
 }).done(function (response) {
-
   function CreateImgTextBox(data, Box) {
-
     var sectionTitle = document.createElement("h4");
     sectionTitle.innerHTML = data[0];
     Box.append(sectionTitle);
@@ -13,8 +11,6 @@ $.ajax({
     data.splice(0, 1);
 
     for (var s = 0; s < data.length; s++) {
-
-
       var sectionBox = document.createElement("div");
 
       if (data[s].SecondTitle) {
@@ -77,7 +73,6 @@ $.ajax({
         }
       }
 
-
       UL = "";
 
       if (data[s].SecImgBox) {
@@ -104,18 +99,14 @@ $.ajax({
         }
       }
 
-      UL = ""
-
+      UL = "";
 
       if (data[s].OtherBox) {
-
         var OtherData = Object.keys(data[s].OtherBox).map(function (index) {
           return data[s].OtherBox[index];
         });
 
-
         for (var n = 0; n < OtherData.length; n++) {
-
           if (OtherData[n].SecondTitle) {
             var SecondTitle = document.createElement("h5");
             SecondTitle.innerHTML = OtherData[n].SecondTitle;
@@ -144,7 +135,6 @@ $.ajax({
               sectionBox.appendChild(UL);
             }
           }
-
         }
       }
 
@@ -152,9 +142,7 @@ $.ajax({
       UL = "";
       Li = "";
       sectionBox = "";
-
     }
-
   }
 
   function CreateTextBox(data) {
@@ -250,7 +238,7 @@ $.ajax({
   var PayBay = $("#first");
 
   for (var i = 0; i < data.length; i++) {
-    if (data[i].BoxTitle == "中奖线") {
+    if (data[i].BoxTitle == "赔付线") {
       for (var a = 1; a < i; a++) {
         var ObjCut = Obj[a];
         var ImgText = Object.keys(ObjCut).map(function (e) {
@@ -260,7 +248,7 @@ $.ajax({
         ImgText = "";
       }
     } else if (data[i].BoxTitle == "旋转") {
-      if (data[i - 1].BoxTitle !== "中奖线") {
+      if (data[i - 1].BoxTitle !== "赔付线") {
         for (var a = 1; a < i; a++) {
           var ObjCut = Obj[a];
           var ImgText = Object.keys(ObjCut).map(function (e) {
@@ -275,7 +263,7 @@ $.ajax({
 
   for (var i = 0; i < data.length; i++) {
     var ObjCut = Obj[i];
-    if (Obj[i].BoxTitle == "中奖线") {
+    if (Obj[i].BoxTitle == "赔付线") {
       var sectionBox = document.createElement("div");
       sectionBox.className = "section ContentBox";
       var sectionTitle = document.createElement("h4");
@@ -319,7 +307,6 @@ $.ajax({
   var firstBox = document.getElementById("first");
   var secondBox = document.getElementById("second");
 
-  // 遍歷獲取的Tab陣列內容
   leftTab.addEventListener("click", function () {
     leftTab.src = "./images/tabButton/gameRules_on.png";
     rightTab.src = "./images/tabButton/Instructions_off.png";
